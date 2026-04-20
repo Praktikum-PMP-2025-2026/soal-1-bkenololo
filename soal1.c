@@ -52,7 +52,7 @@ int main(){
                 int modulo = (kanan+kiri)%2;
                 if(modulo != 1){
                     if(arr[i] < 0){
-                        arr[i] -= 1;
+                        arr[i] = (kanan+kiri)/2 - 1;
                     }
                 }
                 arr[i] = (kanan+kiri)/2;

@@ -53,7 +53,11 @@ int main(){
                 if(kanan > 0 && kiri > 0){
                     arr[i] = (kanan+kiri)/2;
                 } else if (kanan < 0 && kiri < 0){
-                    arr[i] = (kanan+kiri)/2 - 1;
+                    if(modulo != 0){
+                        arr[i] = (kanan+kiri)/2 - 1;
+                    } else {
+                        arr[i] = (kanan+kiri)/2;
+                    }
                 } else if ((kanan > 0 && kiri < 0) || (kanan < 0 && kiri > 0)){
                     if(temp < 0){
                         arr[i] =(kanan+kiri)/2 - 1;

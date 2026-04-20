@@ -7,6 +7,7 @@
 */
 
 #include <stdio.h>
+#include <math.h>
 
 int find_max(int n1, int n2){
     if(n1 > n2){
@@ -28,7 +29,7 @@ int main(){
 
     for (int i = 0; i < n; i++){
         if(arr[i] == -1){
-            int kiri = -1, kanan = -1;
+            float kiri = -1, kanan = -1;
             int adakiri = 0, adakanan = 0;
             // cari di kiri
             for (int j = i-1; j >= 0; j--){
@@ -48,7 +49,7 @@ int main(){
             }
             // set angka baru
             if(adakiri && adakanan){
-                arr[i] = (kanan+kiri)/2;
+                arr[i] = floor(kanan+kiri)/2;
             } else if (adakanan){
                 arr[i] = kanan;
             } else if (adakiri){

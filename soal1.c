@@ -21,14 +21,14 @@ int main(){
     
     if (scanf("%d", &n) != 1) return 0;
     // input
-    float arr[n];
+    int arr[n];
     for (int i = 0; i < n; i++) {
-        scanf("%f", &arr[i]);
+        scanf("%d", &arr[i]);
     }
 
     for (int i = 0; i < n; i++){
         if(arr[i] == -1){
-            float kiri = -1, kanan = -1;
+            int kiri = -1, kanan = -1;
             int adakiri = 0, adakanan = 0;
             // cari di kiri
             for (int j = i-1; j >= 0; j--){
@@ -61,7 +61,7 @@ int main(){
     // print
     printf("RECOVERED");
     for (int i = 0; i < n; i++) {
-        printf(" %1.0f", arr[i]);
+        printf(" %d", arr[i]);
     }
     printf("\n");
 

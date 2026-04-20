@@ -7,7 +7,6 @@
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int find_max(int n1, int n2){
     if(n1 > n2){

@@ -48,7 +48,15 @@ int main(){
             }
             // set angka baru
             if(adakiri && adakanan){
+                int temp = (kanan+kiri)/2;
+                int modulo = (kanan+kiri)%2;
+                if(modulo != 1){
+                    if(arr[i] < 0){
+                        arr[i] -= 1;
+                    }
+                }
                 arr[i] = (kanan+kiri)/2;
+                
             } else if (adakanan){
                 arr[i] = kanan;
             } else if (adakiri){

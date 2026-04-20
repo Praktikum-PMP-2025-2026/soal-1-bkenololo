@@ -48,7 +48,7 @@ int main(){
             }
             // set angka baru
             if(adakiri && adakanan){
-                arr[i] = floor((kanan+kiri)/2);
+                arr[i] = (kanan+kiri)/2;
             } else if (adakanan){
                 arr[i] = kanan;
             } else if (adakiri){

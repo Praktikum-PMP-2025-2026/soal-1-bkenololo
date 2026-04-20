@@ -93,6 +93,6 @@ int main(){
         max_so_far = find_max(max_so_far, current_max);
     }
     
-    printf("MAX SUM %d", max_so_far);
+    printf("MAX_SUM %d", max_so_far);
     
 }

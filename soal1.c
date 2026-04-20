@@ -50,12 +50,13 @@ int main(){
             if(adakiri && adakanan){
                 int temp = (kanan+kiri)/2;
                 int modulo = (kanan+kiri)%2;
-                if(modulo != 1){
-                    if(arr[i] < 0){
-                        arr[i] = (kanan+kiri)/2 - 1;
+                if(modulo != 0){
+                    if(temp < 0){
+                        arr[i] = ((kanan+kiri)/2) - 1;
                     }
+                } else {
+                    arr[i] = (kanan+kiri)/2;
                 }
-                arr[i] = (kanan+kiri)/2;
                 
             } else if (adakanan){
                 arr[i] = kanan;

@@ -22,9 +22,9 @@ int main(){
     
     if (scanf("%d", &n) != 1) return 0;
     // input
-    int arr[n];
+    float arr[n];
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%f", &arr[i]);
     }
 
     for (int i = 0; i < n; i++){
@@ -49,7 +49,7 @@ int main(){
             }
             // set angka baru
             if(adakiri && adakanan){
-                arr[i] = floor(kanan+kiri)/2;
+                arr[i] = floor((kanan+kiri)/2);
             } else if (adakanan){
                 arr[i] = kanan;
             } else if (adakiri){
@@ -62,7 +62,7 @@ int main(){
     // print
     printf("RECOVERED");
     for (int i = 0; i < n; i++) {
-        printf(" %d", arr[i]);
+        printf(" %1.0f", arr[i]);
     }
     printf("\n");
 

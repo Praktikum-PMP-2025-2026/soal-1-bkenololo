@@ -11,8 +11,10 @@
 int find_max(int n1, int n2){
     if(n1 > n2){
         return n1;
-    } else {
+    } else if(n2 > n1) {
         return n2;
+    } else {
+        return n1;
     }
 }
 
@@ -50,7 +52,7 @@ int main(){
             if(adakiri && adakanan){
                 int temp = (kanan+kiri)/2;
                 int modulo = (kanan+kiri)%2;
-                if(kanan > 0 && kiri > 0){
+                if(kanan >= 0 && kiri >= 0){
                     arr[i] = (kanan+kiri)/2;
                 } else if (kanan < 0 && kiri < 0){
                     if(modulo != 0){
@@ -58,7 +60,7 @@ int main(){
                     } else {
                         arr[i] = (kanan+kiri)/2;
                     }
-                } else if ((kanan > 0 && kiri < 0) || (kanan < 0 && kiri > 0)){
+                } else if ((kanan >= 0 && kiri < 0) || (kanan < 0 && kiri >= 0)){
                     if(temp < 0){
                         arr[i] =(kanan+kiri)/2 - 1;
                     } else {
@@ -83,13 +85,14 @@ int main(){
 
     // cari maxsum
 
+     int max_so_far = arr[0];
     int current_max = arr[0];
-    int max = arr[0];
-
-    for (int i = 1; i < n; i++)
-    {
-        current_max = find_max(arr[i], arr[i] + current_max);
-        max = current_max;
+    
+    for (int i = 1; i < n; i++) {
+        current_max = find_max(arr[i], current_max + arr[i]);
+        max_so_far = find_max(max_so_far, current_max);
     }
-    printf("MAX_SUM %d", max);
+    
+    printf("MAX SUM %d\n", max_so_far);
+    
 }
